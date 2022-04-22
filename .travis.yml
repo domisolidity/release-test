@@ -19,15 +19,15 @@ services:
 # @ 운영버전 이미지 빌드
 # 테스트 성공 시 프로젝트의 운영버전 이미지들을 빌드.
 script:
-    - docker build -t achievedw/docker-frontend ./frontend
-    - docker build -t achievedw/docker-backend ./backend
-    - docker build -t achievedw/docker-nginx ./nginx
+    - docker build -t achievedw/nftgame-frontend ./frontend
+    - docker build -t achievedw/nftgame-backend ./backend
+    - docker build -t achievedw/nftgame-nginx ./nginx
     # 도커 hub 로그인
     - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
     # 도커 hub에 push
-    - docker push achievedw/docker-frontend
-    - docker push achievedw/docker-backend
-    - docker push achievedw/docker-nginx
+    - docker push achievedw/nftgame-frontend
+    - docker push achievedw/nftgame-backend
+    - docker push achievedw/nftgame-nginx
 # deploy:
 #     provider: elasticbeanstalk
 #     region: "ap-northeast-2"
