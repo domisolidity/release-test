@@ -2,7 +2,7 @@ language: generic
 
 sudo: required
 
-# @ Test 수행 준비 ---- 
+# @ Test 수행 준비 ----
 # 앱을 도커 환경에서 실행 중이니 travis ci에 도커 환경으로 만들 것임을 선 언
 services:
     - docker
@@ -13,8 +13,8 @@ before_install:
 
 # @ Test 수행 -----
 # 생성된 테스트 이미지를 이용해 테스트 수 s행
-script:
-    - docker run -e CI=true achievedw/test-app npm test
+# script:
+#     - docker run -e CI=true achievedw/test-app npm test
 
 # @ 운영버전 이미지 빌드
 # 테스트 성공 시 프로젝트의 운영버전 이미지들을 빌드.
@@ -38,15 +38,14 @@ script:
 #     on:
 #         branch: main
 
-# deploy:
-#     provider: elasticbeanstalk
-#     region: "ap-northeast-2"
-#     app: "doremifa-p2e-dapp"
-#     env: "Doremifap2edapp-env"
-#     bucket_name: elasticbeanstalk-ap-northeast-2-720487358469
-#     bucket_path: "doremifa-p2e-dapp"
-#     on:
-#         branch: kdw
-#     access_key_id: ${{secrets.AWS_ACCESS_KEY}}
-#     secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-
+deploy:
+    provider: elasticbeanstalk
+    region: "ap-northeast-2"
+    app: "doremifa-p2e-dapp"
+    env: "Doremifap2edapp-env"
+    bucket_name: elasticbeanstalk-ap-northeast-2-720487358469
+    bucket_path: "doremifa-p2e-dapp"
+    on:
+        branch: main
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
