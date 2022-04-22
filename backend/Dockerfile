@@ -4,7 +4,10 @@ WORKDIR /app
 
 COPY ./package.json ./
 
-RUN npm install
+RUN sudo npm install -g npm
+RUN sudo npm cache clear
+RUN npm cache clear
+RUN sudo npm install
 
 COPY ./ ./
 
