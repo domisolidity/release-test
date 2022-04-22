@@ -7,7 +7,7 @@ import Navbar from "../../Navbars/Navbar.js";
 import Sidebar from "../../Sidebar";
 import { useState } from "react";
 // import { Redirect, Route, Switch } from "react-router-dom";
-import routes from "../../../pages/routes";
+import routes from "../../routes";
 // Custom Chakra theme
 import theme from "../../../theme/theme.js";
 import FixedPlugin from "../../FixedPlugin/FixedPlugin";
@@ -17,11 +17,11 @@ import PanelContainer from "../PanelContainer";
 import PanelContent from "../PanelContent";
 import { useRouter } from "next/router";
 export default function SideBarScreen({ children }) {
-  console.log(children)
-  console.log(222)
-  const router = useRouter()
+  console.log(children);
+  console.log(222);
+  const router = useRouter();
 
-  console.log(router)
+  console.log(router);
 
   // const { ...rest } = props;
 
@@ -34,10 +34,9 @@ export default function SideBarScreen({ children }) {
     return router.pathname !== "/admin/full-screen-maps";
   };
 
-
   const getActiveRoute = (routes) => {
-    console.log(routes)
-    console.log(router)
+    console.log(routes);
+    console.log(router);
     let activeRoute = "Default Brand Text";
     for (let i = 0; i < routes.length; i++) {
       if (routes[i].collapse) {
@@ -51,7 +50,6 @@ export default function SideBarScreen({ children }) {
           return categoryActiveRoute;
         }
       } else {
-
         // if (
         //   router.location.href.indexOf(routes[i].layout + routes[i].path) !== -1
         // ) {
@@ -112,7 +110,7 @@ export default function SideBarScreen({ children }) {
         logoText={"Doremi Games"}
         display="none"
         sidebarVariant={sidebarVariant}
-      // {...rest}
+        // {...rest}
       />
       <MainPanel
         w={{
@@ -127,7 +125,7 @@ export default function SideBarScreen({ children }) {
             brandText={getActiveRoute(routes)}
             secondary={getActiveNavbar(routes)}
             fixed={fixed}
-          // {...rest}
+            // {...rest}
           />
         </Portal>
         {/* {getRoute() ? (
@@ -140,17 +138,11 @@ export default function SideBarScreen({ children }) {
           </PanelContent>
         ) : null} */}
         <PanelContent>
-          <PanelContainer>
-            {children}
-          </PanelContainer>
+          <PanelContainer>{children}</PanelContainer>
         </PanelContent>
         <Footer />
         <Portal>
-          <FixedPlugin
-            secondary={getActiveNavbar(routes)}
-            fixed={fixed}
-            onOpen={onOpen}
-          />
+          <FixedPlugin secondary={getActiveNavbar(routes)} fixed={fixed} onOpen={onOpen} />
         </Portal>
         <Configurator
           secondary={getActiveNavbar(routes)}

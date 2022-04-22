@@ -1,7 +1,7 @@
 // import
-import Home from "./home";
+import Home from "../pages/home";
 // import Mypage from "./mypage/index";
-import { HomeIcon, StatsIcon, CartIcon, RocketIcon, WalletIcon } from "../components/Icons/Icons";
+import { HomeIcon, StatsIcon, CartIcon, RocketIcon, WalletIcon } from "./Icons/Icons";
 
 var dashRoutes = [
   {
