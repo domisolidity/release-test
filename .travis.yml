@@ -17,7 +17,7 @@ script:
     - docker run -e CI=true achievedw/test-app npm test
 
 # @ 운영버전 이미지 빌드
-# 테스트 성공 시 프로젝트의 운영버전 이미지들을 빌드 .
+# 테스트 성공 시 프로젝트의 운영버전 이미지들을 빌드.
 script:
     - docker build -t achievedw/docker-frontend ./frontend
     - docker build -t achievedw/docker-backend ./backend
