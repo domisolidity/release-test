@@ -37,10 +37,6 @@ script:
 #     bucket_path: "docker-fullstack-app"
 #     on:
 #         branch: main
-branches:
-  only:
-  - main
-  - kdw
 
 # deploy:
 #     provider: elasticbeanstalk
