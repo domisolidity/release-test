@@ -4,6 +4,7 @@ COPY ./package.json ./
 
 RUN npm cache clean -f
 RUN rm -rf node_modules
+RUN npm install -g npm@8.7.0
 RUN npm install
 COPY ./ ./
 RUN npm run build
