@@ -8,8 +8,8 @@ services:
     - docker
 
 # 구성된 도커 환경에서 dockerfile.dev를 이용해 도커 이미지 생성.
-before_install:
-    - docker build -t achievedw/test1-app -f ./frontend/Dockerfile.dev ./frontend
+# before_install:
+#     - docker build -t achievedw/test1-app -f ./frontend/Dockerfile ./frontend
 
 # @ Test 수행 -----
 # 생성된 테스트 이미지를 이용해 테스트 수 s행
