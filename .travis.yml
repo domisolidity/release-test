@@ -24,7 +24,7 @@ script:
     - docker build -t achievedw/nftgame-nginx ./nginx
     # 도커 hub 로그인
     - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
-    # 도커 hub에 push
+    # 도커 hub에  push
     - docker push achievedw/nftgame-frontend
     - docker push achievedw/nftgame-backend
     - docker push achievedw/nftgame-nginx
