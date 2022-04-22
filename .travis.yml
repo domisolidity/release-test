@@ -40,6 +40,7 @@ script:
 
 deploy:
     provider: elasticbeanstalk
+    edge: true
     region: "ap-northeast-2"
     app: "doremifa-p2e-dapp"
     env: "Doremifap2edapp-env"
@@ -47,5 +48,5 @@ deploy:
     bucket_path: "doremifa-p2e-dapp"
     on:
         branch: main
-    access_key_id: $AWS_ACCESS_KEY
+    access_key_id: $AWS_ACCESS_KEY_ID
     secret_access_key: $AWS_SECRET_ACCESS_KEY
